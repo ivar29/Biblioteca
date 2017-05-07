@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="Sistema_Biblioteca.UC_Libro.UC_libro_baja"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="1273.627" Height="489">
+    <Grid Margin="0,0,-51,-53">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="217*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="contenedor" Grid.ColumnSpan="2">
+            <WrapPanel HorizontalAlignment="Left" Height="489" VerticalAlignment="Top" Width="590">
+                <Label Content="&#xA;" Width="496" Height="24"/>
+                <Label Content="&#xA;" Width="520" Height="24"/>
+                <Label Content="Titulo libro&#xA;" Height="21" FontSize="10" Width="100"/>
+                <TextBox x:Name="txt_titulo_libro" Height="23" TextWrapping="Wrap" Width="99"/>
+                <Label Content="Autor del Libro" Height="23" FontSize="10" Width="81"/>
+                <ComboBox x:Name="combobox_autores" Width="101"/>
+                <Label Content="&#xA;" Width="584" Height="5"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Label Content="Edicion libro" Height="23" FontSize="10" Width="100"/>
+                <TextBox x:Name="txt_edicion_libro" Height="23" TextWrapping="Wrap" Width="99"/>
+                <Label Content="Editorial" Width="83"/>
+                <ComboBox x:Name="combobox_editoriales" Width="98"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Label Content="Tomo libro" Height="23" FontSize="10" Width="100"/>
+                <TextBox x:Name="txt_tomo_libro" Height="23" TextWrapping="Wrap" Width="99"/>
+                <Label Content="Volumen" Height="22" FontSize="10" Width="81"/>
+                <TextBox x:Name="txt_volumen_libro" Height="22" TextWrapping="Wrap" Width="94"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Label Content="&#xA;" Width="32" Height="12"/>
+                <Label Content="Contenido" Height="38" FontSize="10" Width="99"/>
+                <TextBox x:Name="txt_notas" Height="43" TextWrapping="Wrap" Width="292"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Expander Header="Información Adicional"  Height="121" Width="525" IsExpanded="True">
+                    <WrapPanel HorizontalAlignment="Left" Background="#B1B1B1" Height="94" Margin="10,0,-62,0" Width="575">
+                        <Label Content="Idioma" Width="69"/>
+                        <TextBox x:Name="txt_idioma_libro" Height="23" TextWrapping="Wrap" Width="120"/>
+                        <Label Content="" Width="234"/>
+                        <Label Content="" Width="124"/>
+                        <Label Content="isbn" Width="70"/>
+                        <TextBox x:Name="txt_isbn_libro" Height="22" TextWrapping="Wrap" Width="121"/>
+                        <Label Content="Tipo de lector" Width="111"/>
+                        <TextBox x:Name="txt_tipo_lector" Height="22" TextWrapping="Wrap" Width="121"/>
+                        <Label Content="" Width="131"/>
+                        <Label Content="Otro Autor" Width="69"/>
+                        <TextBox x:Name="txt_otro_autor" Height="22" TextWrapping="Wrap" Width="121"/>
+                        <Label Content="Estado " Width="111"/>
+                        <ComboBox x:Name="cb_estado_libro" Width="120">
+                            <ComboBoxItem Content="Activo" HorizontalAlignment="Left" Width="236"/>
+                            <ComboBoxItem Content="Baja" HorizontalAlignment="Left" Width="236"/>
+                        </ComboBox>
+
+                    </WrapPanel>
+
+                </Expander>
+
+
+            </WrapPanel>
+        </Canvas>
+        <GroupBox Header="Razon Baja" Height="116" Width="536" Margin="0,325,789,101" Grid.ColumnSpan="2">
+            <WrapPanel HorizontalAlignment="Left" Height="72" Margin="10,10,0,0" VerticalAlignment="Top" Width="488">
+                <Label Content="Razon" Width="80"/>
+                <TextBox x:Name="txt_Razon" Height="48" TextWrapping="Wrap" Width="388" IsEnabled="False"/>
+                <Label x:Name="lb_baja" Content="" Width="382" Foreground="Red"/>
+            </WrapPanel>
+        </GroupBox>
+        <Button x:Name="btn_guardar" Content="Bajar" HorizontalAlignment="Left" Height="25" Margin="203.701,464,0,0" VerticalAlignment="Top" Width="75" Click="btn_guardar_Click" IsEnabled="False" Grid.Column="1"/>
+        <Button x:Name="btn_limpiar" HorizontalAlignment="Left" Margin="123.701,464,0,0" VerticalAlignment="Top" Width="75" Height="25" RenderTransformOrigin="0.56,1.56" Content="Limpiar" Click="Limpiar_Form_Baja" IsEnabled="False" Grid.Column="1"/>
+
+        <DataGrid x:Name="datagrid_libro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="337.701,70,0,0" Height="371" Width="653" AutoGenerateColumns="True" ItemsSource="{Binding}"  IsReadOnly="True" MouseDoubleClick="Doble_Click_Bajar_Libro" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Grid.Column="1"/>
+        <TextBox x:Name="txt_Buscar" MaxLength="50" TextWrapping="Wrap" KeyUp="busqueda_libro" Margin="510.701,25,0,0" HorizontalAlignment="Left" Width="309" Height="24" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="lbl_buscar" Content="ID Libro Buscar:" Margin="387.701,16,579,493" Grid.Column="1"/>
+        <Label Content="Id Libro" Margin="10,10,840,319" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_ID" TextWrapping="Wrap" KeyUp="busqueda_libro" Margin="130,10,0,0" HorizontalAlignment="Left" Width="309" Height="24" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+    </Grid>
+</UserControl>
+

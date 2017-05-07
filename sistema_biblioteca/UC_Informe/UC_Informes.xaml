@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Sistema_Biblioteca.UC_Informe.UC_Informes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1600">
+    <Grid>
+        <Rectangle Height="64" Margin="0,10,0,0" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,0.9" StartPoint="0.2,0.5">
+                    <GradientStop Color="#00FF0214" Offset="1"/>
+                    <GradientStop Color="Red"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="INFORMES" HorizontalAlignment="Left" Margin="303,20,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" FontWeight="Bold" FontStyle="Italic"/>
+        <ComboBox SelectedIndex="0" x:Name="combo_informes" HorizontalAlignment="Left" Margin="200,150,0,0" VerticalAlignment="Top" Width="320" Height="30" DropDownClosed="combo_informes_DropDownClosed">
+            <ComboBoxItem Content="Libros en Español" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Libros en Inglés" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Cantidad de Libros en Español para Alumnos" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Cantidad de Libros en Español para Profesores" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Cantidad de Libros en Inglés para Alumnos" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Cantidad de Libros en Inglés para Profesores" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Ítems activos" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Ítems dados de baja" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Cantidad de Revistas fundadas antes de año 2000" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Cantidad de Revistas fundadas despues de año 2000" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Cantidad de Libros por Autor" HorizontalAlignment="Left" Width="300"/>
+            <ComboBoxItem Content="Libros Chilenos" HorizontalAlignment="Left" Width="318"/>
+        </ComboBox>
+        <DataGrid x:Name="datagrid_informes" HorizontalAlignment="Left" Margin="550,150,0,0" VerticalAlignment="Top" Height="300" Width="650" AutoGenerateColumns="True" ItemsSource="{Binding}"  IsReadOnly="True"/>
+    </Grid>
+</UserControl>

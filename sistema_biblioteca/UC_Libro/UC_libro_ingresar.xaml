@@ -1,0 +1,172 @@
+﻿<UserControl x:Name="user_control_ingresar" x:Class="Sistema_Biblioteca.UC_Libro.UC_libro_ingresar"
+            
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="1302.505" Height="452.158">
+    <Grid Margin="0,0,-815,32">
+        <Canvas x:Name="contenedor1" HorizontalAlignment="Left" Height="389" Margin="0,-1,0,0" VerticalAlignment="Top" Width="672">
+            <WrapPanel HorizontalAlignment="Left" Height="399" Margin="0,-1,0,0" VerticalAlignment="Top" Width="603">
+                <Label Content="&#xD;&#xA;" Width="520" Height="13"/>
+                <Label x:Name="lbl_titulo" Content="Titulo libro&#xD;&#xA;" Height="21" FontSize="10" Width="100"/>
+                <TextBox x:Name="txt_titulo_libro" MaxLength="50" Height="23" TextWrapping="Wrap" Width="99"/>
+                <Label x:Name="lbl_autor" Content="Autor del Libro" Height="23" FontSize="10" Width="81"/>
+                <Label Content="&#xA;" Width="584" Height="5"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Label x:Name="lbl_edicion" Content="Edicion libro" Height="23" FontSize="10" Width="100"/>
+                <TextBox x:Name="txt_edicion_libro" MaxLength="50" Height="23" TextWrapping="Wrap" Width="99" Text="No tiene" KeyDown="txt_edicion_libro_KeyDown" LostKeyboardFocus="txt_edicion_libro_LostKeyboardFocus"/>
+                <Label x:Name="lbl_editorial" Content="Editorial" Width="80"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Label x:Name="lbl_tomo" Content="Tomo libro" Height="23" FontSize="10" Width="100"/>
+                <TextBox x:Name="txt_tomo_libro" MaxLength="50" Height="23" TextWrapping="Wrap" Width="99" Text="No tiene" KeyDown="txt_tomo_libro_KeyDown" LostKeyboardFocus="txt_tomo_libro_LostKeyboardFocus"/>
+                <Label x:Name="lbl_volumen" Content="Volumen" Height="23" FontSize="10" Width="81"/>
+                <TextBox x:Name="txt_volumen_libro" MaxLength="50" Height="23" TextWrapping="Wrap" Width="99" Text="No tiene" KeyDown="txt_volumen_libro_KeyDown" LostKeyboardFocus="txt_volumen_libro_LostKeyboardFocus"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Label x:Name="lbl_stock" Content="Stock de Libro" Height="23" FontSize="10" Width="100"/>
+                <TextBox x:Name="txt_sotck_libro" MaxLength="50" Height="23" TextWrapping="Wrap" Width="99" KeyDown="txt_sotck_libro_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Label x:Name="lbl_contenido" Content="Contenido" Height="23" FontSize="10" Width="98"/>
+                <TextBox x:Name="txt_contenido_libro" MaxLength="100" Height="41" TextWrapping="Wrap" Width="283"/>
+                <Label Content="&#xA;" Width="520" Height="5"/>
+                <Expander x:Name="Informacion_Adicional" Header="Información Adicional"  Height="134" Width="585">
+                    <WrapPanel HorizontalAlignment="Left" Background="#B1B1B1" Height="100" Margin="10,0,-2,0" Width="575">
+                        <Label Content="Idioma" Width="69"/>
+                       
+                        <Label Content="" Width="231"/>
+                        <Label Content="" Width="124"/>
+                        <Label Content="isbn" Width="70" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="-215" Y="25"/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                        <TextBox x:Name="txt_isbn" MaxLength="50" Height="22" TextWrapping="Wrap" Width="119" RenderTransformOrigin="0.5,0.5" Text="No tiene" KeyDown="txt_isbn_KeyDown" LostKeyboardFocus="txt_isbn_LostKeyboardFocus">
+                            <TextBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="299"/>
+                                </TransformGroup>
+                            </TextBox.RenderTransform>
+                        </TextBox>
+                        <Label Content="Tipo de lector" Width="90" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="89" Y="-24"/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                       
+                        <Label Content="" Width="60"/>
+                        <Label Content="Otro Autor" Width="69" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="-269"/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                        <TextBox x:Name="txt_otro_autor" MaxLength="50" Height="22" TextWrapping="Wrap" Width="119" RenderTransformOrigin="0.5,0.5" Text="No tiene" LostKeyboardFocus="txt_otro_autor_LostKeyboardFocus" KeyDown="txt_otro_autor_KeyDown">
+                            <TextBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="-267"/>
+                                </TransformGroup>
+                            </TextBox.RenderTransform>
+                        </TextBox>
+                        <ComboBox x:Name="combobox_tipolector" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.116,0.698" DropDownOpened="recarga_combobox_editorial">
+                            <ComboBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="299" Y="-49"/>
+                                </TransformGroup>
+                            </ComboBox.RenderTransform>
+                            <ComboBoxItem Content="Alumno"/>
+                            <ComboBoxItem Content="Profesor"/>
+                        </ComboBox>
+                        <ComboBox x:Name="combobox_idioma" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.116,0.698" DropDownOpened="recarga_combobox_editorial">
+                            <ComboBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform X="-49" Y="-49"/>
+                                </TransformGroup>
+                            </ComboBox.RenderTransform>
+                            <ComboBoxItem Content="Español"/>
+                            <ComboBoxItem Content="Ingles"/>
+                            <ComboBoxItem Content="Otros"/>
+                        </ComboBox>
+                    </WrapPanel>
+                </Expander>
+            </WrapPanel>
+            <Button x:Name="btn_guardar" Content="Guardar" HorizontalAlignment="Left" Height="25" Margin="462,331,0,0" VerticalAlignment="Top" Width="75" Click="Button_Guardar"/>
+            <Button x:Name="btn_limpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="382,331,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="Limpiar_Form_ingreso"/>
+            <WrapPanel HorizontalAlignment="Left" Height="103" Margin="437,13,0,0" VerticalAlignment="Top" Width="100">
+                <Button x:Name="btn_Nuevo_Autor" Content="Nuevo Autor" Width="99" Click="Button_Click"/>
+                <Label Content="" Width="99" Height="15"/>
+                <Button x:Name="btn_Nueva_Editorial" Content="Nueva Editorial" Width="100" Click="Button_Click_1"/>
+            </WrapPanel>
+            <ComboBox x:Name="combobox_editorial" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="281,46,0,0" RenderTransformOrigin="1.116,0.698" DropDownOpened="recarga_combobox_editorial"/>
+            <ComboBox x:Name="combobox_autor" HorizontalAlignment="Left" Margin="281,10,0,0" VerticalAlignment="Top" Width="120" DropDownOpened="recarga_combobox_autor" DropDownClosed="combobox_autor_DropDownClosed"/>
+        </Canvas>
+
+        <Canvas x:Name="canvas_contenedor2" HorizontalAlignment="Left" Height="300" Margin="722,16,0,0" VerticalAlignment="Top" Width="596">
+            <Label x:Name="mensajeerror" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFD30606" Canvas.Left="-639" Canvas.Top="-8"/>
+            <Label x:Name="mensajeerror1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFD30606" Canvas.Left="-639" Canvas.Top="90"/>
+        </Canvas>
+
+        <UserControl 
+        	x:Name="user_control" 
+	Margin="722,16,875,222">
+            <Grid>
+                <GroupBox Header="Ingreso Editorial" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="164" Width="480">
+                    <Label x:Name="mensajeerror2" Content="" HorizontalAlignment="Left" Margin="74,10,0,0" VerticalAlignment="Top" Width="185" Foreground="#FFCB0808"/>
+                </GroupBox>
+                <TextBox x:Name="txt_editorial" MaxLength="50" HorizontalAlignment="Left" Height="23" Margin="86,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="382"/>
+                <Label Content="Nombre:" HorizontalAlignment="Left" Height="26" Margin="25,63,0,0" VerticalAlignment="Top" Width="56"/>
+                <Button x:Name="btn_guardar1" Content="Guardar" HorizontalAlignment="Left" Height="26" Margin="398,135,0,0" VerticalAlignment="Top" Width="70" Click="Guardar_Editorial"/>
+                <Button x:Name="btn_cancelar" Content="Cancelar" HorizontalAlignment="Left" Height="26" Margin="323,135,0,0" VerticalAlignment="Top" Width="70" Click="Cancelar_Form_Editorial"/>
+
+            </Grid>
+        </UserControl>
+        <UserControl 
+        	x:Name="user_control_autor" 
+	Margin="719,18,875,84">
+            <Grid>
+                <GroupBox Header="Ingreso Autor" HorizontalAlignment="Left" Margin="8,8,-205,-7" VerticalAlignment="Top" Height="299" Width="497">
+                    <DatePicker x:Name="fecha_muerte" HorizontalAlignment="Left" Margin="91,125,0,0" VerticalAlignment="Top"/>
+                </GroupBox>
+                <TextBox x:Name="txt_nombre" MaxLength="50" HorizontalAlignment="Left" Height="23" Margin="104,58,-178,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"/>
+                <TextBox x:Name="txt_nacionalidad" MaxLength="50" HorizontalAlignment="Left" Height="23" Margin="109,212,-183,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"/>
+                <Label Content="Nombre:" HorizontalAlignment="Left" Height="25" Margin="20,56,0,0" VerticalAlignment="Top" Width="84"/>
+                <Label x:Name="mensajeerror3" Content="" HorizontalAlignment="Left" Margin="104,32,-24,0" VerticalAlignment="Top" Width="220" Foreground="#FFE60909"/>
+                <Label Content="F. nacimineto:" HorizontalAlignment="Left" Height="26" Margin="20,104,0,0" VerticalAlignment="Top" Width="84"/>
+                <Label Content="F. muerte:" HorizontalAlignment="Left" Height="24" Margin="20,149,0,0" VerticalAlignment="Top" Width="85"/>
+                <Label Content="Nacionalidad:" HorizontalAlignment="Left" Height="26" Margin="20,209,0,0" VerticalAlignment="Top" Width="84"/>
+                <Button x:Name="btn_guardar2" Content="Guardar" HorizontalAlignment="Left" Height="26" Margin="421,251,-191,0" VerticalAlignment="Top" Width="70" Click="btn_guardar2_Click"/>
+                <Button x:Name="btn_cancelar1" Content="Cancelar" HorizontalAlignment="Left" Height="26" Margin="346,251,-116,0" VerticalAlignment="Top" Width="70" Click="Cancelar_Form_Autor_Libro"/>
+                <DatePicker x:Name="fecha_nacimiento" HorizontalAlignment="Left" Margin="105,103,0,0" VerticalAlignment="Top" SelectedDateFormat="Short"/>
+                <Label x:Name="mensajeerror4" Content="" HorizontalAlignment="Left" Margin="109,186,-29,0" VerticalAlignment="Top" Width="220" Foreground="#FFE60909"/>
+
+            </Grid>
+        </UserControl>
+
+    </Grid>
+</UserControl>

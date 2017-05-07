@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Sistema_Biblioteca.UC_Eliminar.Eliminar_Editorial"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="483.582" Width="1216.418">
+    <Grid Margin="0,0,38,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="127*"/>
+            <RowDefinition Height="115*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="txt_ID" HorizontalAlignment="Left" Height="23" Margin="86,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" IsEnabled="False"/>
+        <Label x:Name="lb_id" Content="ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,62,0,0" Width="42"/>
+        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="86,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="369" IsEnabled="False"/>
+        <Label x:Name="lb_nombre" Content="Nombre:" Margin="24,130,1092,0" VerticalAlignment="Top" Width="62"/>
+        <Button x:Name="btn_Eliminar" Content="Eliminar" HorizontalAlignment="Left" Height="24" Margin="392,233,0,0" VerticalAlignment="Top" Width="63" IsEnabled="False" Click="btn_eliminar" Grid.RowSpan="2"/>
+        <Button x:Name="btn_cancelar" Content="Cancelar" HorizontalAlignment="Left" Height="24" Margin="271,233,0,0" VerticalAlignment="Top" Width="63" Click="btn_cancelar_Click" IsEnabled="False" Grid.RowSpan="2"/>
+        <DataGrid x:Name="dataGrid_Editoriales" HorizontalAlignment="Left" Margin="549,88,0,0" VerticalAlignment="Top" AutoGenerateColumns="True" ItemsSource="{Binding}"  IsReadOnly="True"  Height="166" Width="512" MouseDoubleClick="dataGrid_Editoriales_MouseDoubleClick" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False"/>
+        <TextBox MaxLength="50" x:Name="txt_buscar" HorizontalAlignment="Left" Height="23" Margin="610,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" KeyUp="txt_buscar_KeyUp"/>
+        <Label x:Name="lb_buscar" Content="Buscar:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="549,57,0,0" Width="61"/>
+        <Image Margin="164,50,860,67.731" Source="/Sistema_Biblioteca;component/basurero.png" Stretch="Fill" Opacity="0.105"/>
+        <Border x:Name="Datos_grup" BorderBrush="#FFCDCDCD" BorderThickness="1" HorizontalAlignment="Left" Height="154" Margin="24,41,0,0" VerticalAlignment="Top" Width="452" Background="#30A4A4A4"/>
+    </Grid>
+</UserControl>

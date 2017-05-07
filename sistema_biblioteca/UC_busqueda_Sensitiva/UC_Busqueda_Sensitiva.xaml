@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Sistema_Biblioteca.UC_busqueda_Sensitiva.UC_Busqueda_Sensitiva"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="1617" Height="568.525">
+    <Grid>
+        <ComboBox x:Name="cmb_opciones_busqueda" HorizontalAlignment="Left" Margin="303,133,0,0" VerticalAlignment="Top" Width="159" SelectedIndex="0" Height="21">
+            <ComboBoxItem Content="LIBROS" FontStyle="Italic"/>
+            <ComboBoxItem Content="REVISTAS" FontStyle="Italic"/>
+            <ComboBoxItem Content="MATERIAL" FontStyle="Italic"/>
+        </ComboBox>
+        <Rectangle Height="64" Margin="0,10,0,0" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,0.9" StartPoint="0.2,0.5">
+                    <GradientStop Color="#00FF0214" Offset="1"/>
+                    <GradientStop Color="Red"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox x:Name="txt_Buscar_sensitiva" Height="21" Margin="467,133,0,0" MaxLength="500" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="757" KeyUp="LLenar_mi_DataGrid"/>
+        <Label Content="Opciones Búsqueda Inteligente" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="303,109,0,0" Width="213" FontWeight="Bold" Foreground="#FF707070" Height="24"/>
+        <Label Content="BÚSQUEDA  GENERAL" HorizontalAlignment="Left" Margin="303,20,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="1526,35,0,0" VerticalAlignment="Top" Width="24" RenderTransformOrigin="1.354,1.096"/>
+        <Label Content="LIBRO, MATERIALES Y REVISTAS" HorizontalAlignment="Left" Margin="939,24,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" FontStyle="Italic"/>
+        <DataGrid x:Name="Grid_Busqueda" HorizontalAlignment="Left" Margin="303,168,0,0" AutoGenerateColumns="True" ItemsSource="{Binding}"  IsReadOnly="True" VerticalAlignment="Top" Height="301" Width="921"/>
+
+    </Grid>
+</UserControl>

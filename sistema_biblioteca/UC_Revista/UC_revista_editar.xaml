@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Sistema_Biblioteca.UC_Revista.UC_revista_editar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="616.775" Width="1445.902">
+    <Grid HorizontalAlignment="Left" Width="1436" Height="607" VerticalAlignment="Top">
+        <Canvas x:Name="contenedor">
+
+            <Button x:Name="btn_Editar" Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="32" Canvas.Left="568" Canvas.Top="504" Click="btn_Editar_Click"/>
+            <TextBox x:Name="txt_id" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" KeyUp="busqueda_revista" IsEnabled="False" Canvas.Left="138" Canvas.Top="48"/>
+            <Button x:Name="Btn_cancelar" Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="32" Click="Cancelar_Form_Editar_Revist" Canvas.Left="455" Canvas.Top="504"/>
+            <Label Content="Titulo :" Width="652" Canvas.Left="18" Canvas.Top="140"/>
+            <TextBox x:Name="txt_nombre_editar" Height="22" TextWrapping="Wrap" Canvas.Left="55" Canvas.Top="171" Width="615" MaxLength="50"/>
+            <Label Content="Fecha Fundación :" Canvas.Top="188" Width="652" Canvas.Left="18"/>
+            <DatePicker x:Name="fecha_Fundacion" HorizontalAlignment="Left" VerticalAlignment="Top" Width="212" Canvas.Left="55" Canvas.Top="214"/>
+            <Label Content="Issn :" Canvas.Top="238" Width="652" Canvas.Left="18"/>
+            <TextBox x:Name="txt_issn_editar" Height="24" TextWrapping="Wrap" Canvas.Left="55" Canvas.Top="264" Width="615" KeyDown="txt_issn_editar_KeyDown" LostKeyboardFocus="txt_issn_editar_LostKeyboardFocus" MaxLength="50"/>
+            <Label Content="Estado revista :" Canvas.Top="288" Width="652" Canvas.Left="18"/>
+            <ComboBox x:Name="cb_estado_revista" Canvas.Left="55" Canvas.Top="314" Width="615">
+                <ComboBoxItem Content="Activo" HorizontalAlignment="Left" Width="236"/>
+                <ComboBoxItem Content="Baja" HorizontalAlignment="Left" Width="236"/>
+            </ComboBox>
+            <Label Content="Contenido:" Canvas.Top="336" Width="652" Canvas.Left="18"/>
+            <Label x:Name="mensajeerror" Content="" Canvas.Top="167" Width="14" Canvas.Left="41" Foreground="#FFFF1F1F"/>
+            <TextBox x:Name="txt_contenido_editar_Copy" Height="62" TextWrapping="Wrap" Canvas.Left="55" Canvas.Top="367" Width="615" MaxLength="100"/>
+        </Canvas>
+        <GroupBox x:Name="grb_id" Header="Revista a Editar" HorizontalAlignment="Left" Margin="744,0,0,0" VerticalAlignment="Top" Height="92" Width="590"/>
+        <TextBox x:Name="txt_id_revista_buscar" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" KeyUp="busqueda_revista" Canvas.Left="908" Canvas.Top="44" Margin="928,27,0,0"/>
+        <Label x:Name="lbl_Revista" Content="Id Revista" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-14.084,-0.568" Width="121" Canvas.Left="782" Canvas.Top="44" Margin="776,26,0,0"/>
+        <DataGrid x:Name="datagrid_revista" VerticalAlignment="Top" Margin="744,107,201,0" Height="345" AutoGenerateColumns="True" ItemsSource="{Binding}"  IsReadOnly="True" MouseDoubleClick="Doble_Click_Revista" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False"/>
+        <GroupBox Header="Revista a Editar" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Height="92" Width="680"/>
+        <Label Content="Id Revista" HorizontalAlignment="Left" Margin="66,48,0,0" VerticalAlignment="Top" RenderTransformOrigin="-14.084,-0.568" Width="76"/>
+
+    </Grid>
+</UserControl>

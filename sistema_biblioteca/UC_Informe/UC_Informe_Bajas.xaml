@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="Sistema_Biblioteca.UC_Informe.UC_Informe_Bajas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="394.03" Width="664.179">
+    <Grid>
+        <GroupBox Header="Lista de Bajas&#xD;&#xA;" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="362" Width="650">
+            <DataGrid x:Name="dataGrid_Bajas" HorizontalAlignment="Left" Margin="0,10,-2,0" VerticalAlignment="Top" Height="301" Width="640" AutoGenerateColumns="True" ItemsSource="{Binding}" IsReadOnly="True"/>
+        </GroupBox>
+
+    </Grid>
+</UserControl>
